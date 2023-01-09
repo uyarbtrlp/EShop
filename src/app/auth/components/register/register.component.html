@@ -1,0 +1,150 @@
+<div class="">
+    <form [formGroup]="registerForm">
+        <div formGroupName="userData">
+            <div class="form-group">
+                <span class="p-float-label">
+                    <input
+                        id="email"
+                        type="text"
+                        pInputText
+                        formControlName="email"
+                        [ngClass]="{
+                            'ng-dirty':
+                                !registerForm.get('userData.email').valid &&
+                                registerForm.get('userData.email').touched,
+                            'ng-invalid':
+                                !registerForm.get('userData.email').valid &&
+                                registerForm.get('userData.email').touched
+                        }"
+                    />
+                    <label for="email">Email</label>
+                </span>
+                <span
+                    class="help-block"
+                    *ngIf="
+                        !registerForm.get('userData.email').valid &&
+                        registerForm.get('userData.email').touched
+                    "
+                >
+                    <small
+                        *ngIf="
+                            registerForm.get('userData.email').hasError('email')
+                        "
+                        class="p-error block"
+                        >This email is invalid</small
+                    >
+                    <small
+                        *ngIf="
+                            registerForm
+                                .get('userData.email')
+                                .hasError('required')
+                        "
+                        class="p-error block"
+                        >This field is required</small
+                    >
+                </span>
+            </div>
+            <div class="form-group mt-4">
+                <span class="p-float-label">
+                    <input
+                        id="password"
+                        type="password"
+                        pInputText
+                        formControlName="password"
+                        [ngClass]="{
+                            'ng-dirty':
+                                !registerForm.get('userData.password').valid &&
+                                registerForm.get('userData.password').touched,
+                            'ng-invalid':
+                                !registerForm.get('userData.password').valid &&
+                                registerForm.get('userData.password').touched
+                        }"
+                    />
+                    <label for="password">Password</label>
+                </span>
+                <span
+                    class="help-block"
+                    *ngIf="
+                        !registerForm.get('userData.password').valid &&
+                        registerForm.get('userData.password').touched
+                    "
+                >
+                    <small
+                        *ngIf="
+                            registerForm
+                                .get('userData.password')
+                                .hasError('required')
+                        "
+                        class="p-error block"
+                        >This field is required</small
+                    >
+                </span>
+            </div>
+            <div class="form-group mt-4">
+                <span class="p-float-label">
+                    <input
+                        id="passwordConfirm"
+                        type="password"
+                        pInputText
+                        formControlName="passwordConfirm"
+                        [ngClass]="{
+                            'ng-dirty':
+                                !registerForm.get('userData.passwordConfirm')
+                                    .valid &&
+                                registerForm.get('userData.passwordConfirm')
+                                    .touched,
+                            'ng-invalid':
+                                !registerForm.get('userData.passwordConfirm')
+                                    .valid &&
+                                registerForm.get('userData.passwordConfirm')
+                                    .touched
+                        }"
+                    />
+                    <label for="password">Confirm Password</label>
+                </span>
+                <span
+                    class="help-block"
+                    *ngIf="
+                        !registerForm.get('userData.passwordConfirm').valid &&
+                        registerForm.get('userData.passwordConfirm').touched
+                    "
+                >
+                    <small
+                        *ngIf="
+                            registerForm
+                                .get('userData.passwordConfirm')
+                                .hasError('required')
+                        "
+                        class="p-error block"
+                        >This field is required</small
+                    >
+                </span>
+
+                <small
+                    *ngIf="
+                        registerForm.hasError('passwordMismatch') &&
+                        registerForm.get('userData.passwordConfirm').touched
+                    "
+                    class="p-error block"
+                    ><br
+                        *ngIf="
+                            registerForm
+                                .get('userData.passwordConfirm')
+                                .hasError('required')
+                        "
+                    />The password and the repeat password fields does not
+                    equal</small
+                >
+            </div>
+        </div>
+        <button
+            pButton
+            pRipple
+            style="padding: 12px 75px"
+            type="submit"
+            label="Submit"
+            class="p-button-rounded mt-3"
+            [disabled]="!registerForm.valid"
+        ></button>
+    </form>
+</div>

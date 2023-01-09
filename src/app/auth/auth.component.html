@@ -1,3 +1,13 @@
-<p>Auth Layout</p>
-<router-outlet></router-outlet>
+
+<div class="d-flex align-items-center justify-content-center" style="height: 60%;">
+  <div>
+    <p-tabMenu id="authNav" [model]="items"></p-tabMenu>
+    <p-card [style]="{'position':'fixed'}" styleClass="p-card-shadow">
+        <router-outlet></router-outlet>
+  </p-card>
+
+  </div>
+</div>
+
+
 
