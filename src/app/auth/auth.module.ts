@@ -12,6 +12,7 @@ import {PanelModule} from 'primeng/panel';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
+import {ToastModule} from 'primeng/toast';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {CardModule} from 'primeng/card';
     PanelModule,
     InputTextModule,
     ButtonModule,
-    CardModule
+    CardModule,
+    ToastModule
 
   ]
 })

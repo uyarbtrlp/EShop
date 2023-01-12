@@ -1,5 +1,5 @@
-<div class="">
-    <form [formGroup]="loginForm">
+<div style="width: 210px;">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div formGroupName="userData">
             <div class="form-group">
                 <span class="p-float-label">
@@ -92,3 +92,5 @@
         ></button>
     </form>
 </div>
+
+<p-toast position="top-center"></p-toast>

@@ -1,5 +1,5 @@
-<div class="">
-    <form [formGroup]="registerForm">
+<div style="width: 210px;">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div formGroupName="userData">
             <div class="form-group">
                 <span class="p-float-label">
@@ -78,6 +78,15 @@
                         class="p-error block"
                         >This field is required</small
                     >
+                    <small
+                        *ngIf="
+                            registerForm
+                                .get('userData.password')
+                                .hasError('minlength')
+                        "
+                        class="p-error block"
+                        >This field should be greater than 6 characters</small
+                    >
                 </span>
             </div>
             <div class="form-group mt-4">
@@ -148,3 +157,5 @@
         ></button>
     </form>
 </div>
+
+<p-toast position="top-center"></p-toast>
