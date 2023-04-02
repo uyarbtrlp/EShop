@@ -5,10 +5,11 @@ import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
   {
-    path:'', component:CategoryComponent,
+    path:'', component:DashboardComponent,
     children:[
+      { path:'', redirectTo:"categories", pathMatch:"full" },
       { path:'categories',component:CategoryComponent},
-      { path: "**",redirectTo:"categories"}
+      { path: "**",component:CategoryComponent}
     ]
   }
 ];

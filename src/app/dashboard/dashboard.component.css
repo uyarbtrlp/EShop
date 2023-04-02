@@ -1,0 +1,24 @@
+:host ::ng-deep .p-menubar {
+  border-radius: 0px;
+}
+
+:host ::ng-deep .p-sidebar-content{
+  padding: 9px
+}
+
+:host ::ng-deep .p-menuitem-link-active{
+  background-color: #797048!important;
+}
+
+:host ::ng-deep .p-panelmenu-icon {
+  order: 1;
+}
+:host ::ng-deep .p-menuitem-text {
+  flex-grow: 1;
+ }
+ :host ::ng-deep .p-menubar {
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 10000;
+  top: 0;
+}

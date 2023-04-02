@@ -1,3 +1,32 @@
-<p>Dashoard Layout</p>
-<router-outlet></router-outlet>
-
+<div style="padding-left: 20rem">
+    <p-menubar>
+        <div>
+            <button
+                type="button"
+                pButton
+                label="Logout"
+                icon="pi pi-power-off"
+                style="margin-left: 0.25em"
+            ></button>
+        </div>
+    </p-menubar>
+    <p-sidebar
+        [visible]="true"
+        [showCloseIcon]="false"
+        [modal]="false"
+        [transitionOptions]="'0ms'"
+    >
+        <ng-template pTemplate="header">
+          ESHOP BRAND
+        </ng-template>
+        <ng-template pTemplate="content">
+            <p-panelMenu
+                [model]="items"
+                [style]="{ width: '300px', marginTop: '5px' }"
+            ></p-panelMenu
+        ></ng-template>
+    </p-sidebar>
+    <div class="m-4 surface-ground">
+        <router-outlet></router-outlet>
+    </div>
+</div>

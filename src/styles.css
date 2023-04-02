@@ -3,4 +3,7 @@ html, body{
   height: 100%;
   padding: 0px;
   margin: 0px;
+  background-color: var(--bs-body-color) !important;
+  font-family: var(--bs-body-font-family) !important ;
+  color: var(--text-color) !important;
 }
